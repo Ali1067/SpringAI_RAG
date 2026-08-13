@@ -1,0 +1,3 @@
+package com.example.rag.service;
+import org.springframework.ai.document.Document;import org.springframework.ai.vectorstore.VectorStore;import org.springframework.jdbc.core.JdbcTemplate;import org.springframework.stereotype.Component;import java.util.*;
+@Component public class KnowledgeBaseLoader {public KnowledgeBaseLoader(JdbcTemplate db,VectorStore store){List<Document> docs=db.query("SELECT id,title,url,keywords,description FROM help_pages",(r,n)->new Document(r.getString("description"),Map.of("id",r.getLong("id"),"title",r.getString("title"),"url",r.getString("url"),"keywords",r.getString("keywords"))));if(!docs.isEmpty())store.add(docs);}}

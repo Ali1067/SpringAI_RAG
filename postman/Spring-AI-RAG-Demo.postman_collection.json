@@ -1,0 +1,1 @@
+{"info":{"name":"Spring AI RAG Demo","schema":"https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},"item":[{"name":"Ask AI","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\n  \"question\": \"How do I submit a memo?\"\n}"},"url":{"raw":"http://localhost:8080/api/ai/ask"}}}]}
